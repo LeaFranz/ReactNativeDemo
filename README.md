@@ -1,2 +1,2 @@
-# ReactNativeDemo
-This is a demo for setting up a RN-project.
+# Projectwork
+This is a repository for a cross-platform app for displaying animal data.

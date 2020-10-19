@@ -1,4 +1,4 @@
-name: CI
+name: CI for testing
 
 on:
   push:
@@ -8,7 +8,6 @@ jobs:
   install-and-test:
     runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       - name: install npm dependencies #TODO: cache
         run: |

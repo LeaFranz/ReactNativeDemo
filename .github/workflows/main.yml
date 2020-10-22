@@ -1,4 +1,4 @@
-name: CI for testing
+name: CI (main)
 
 on:
   push:
@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: install npm dependencies #TODO: cache
+      - name: install npm dependencies 
         run: |
           npm install
       - name: run tests

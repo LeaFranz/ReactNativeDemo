@@ -1,10 +1,14 @@
 import React from 'react';
 import {Text, View, StyleSheet} from 'react-native';
+import {Button} from 'native-base';
 
 const WelcomeScreen = (props) => {
   return (
     <View style={styles.container}>
-      <Text>Welcome Screen</Text>
+      <Text>Welcome Screen :)</Text>
+      <Button rounded success>
+        <Text>click me</Text>
+      </Button>
     </View>
   );
 };

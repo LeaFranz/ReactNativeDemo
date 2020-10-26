@@ -6,14 +6,26 @@ import {
   View,
 } from 'react-native';
 import AutoHeightImage from 'react-native-auto-height-image';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Logo from '../assets/images/test_logo.png';
 import CustomTextInput from '../components/CustomTextInput';
 import CustomButton from '../components/CustomButton';
 
 const LoginScreen = ({navigation, props}) => {
+  //observable - for rendering
+  let pwdVisible = false;
+
+  //observable - for rendering
+  let eyeIcon = 'visibility-off';
+
   const onLoginPressed = () => {
     navigation.replace('App'); //for not going back
+  };
+
+  const onEyeClicked = () => {
+    pwdVisible = !pwdVisible;
+    eyeIcon = pwdVisible ? 'visibility' : 'visiblity-off';
   };
 
   return (
@@ -25,11 +37,21 @@ const LoginScreen = ({navigation, props}) => {
           placeholder="Email"
           placeholderTextColor="grey"
         />
-        <CustomTextInput
-          style={styles.textInput}
-          placeholder="Password"
-          placeholderTextColor="grey"
-        />
+        <View>
+          <CustomTextInput
+            style={styles.textInput}
+            placeholder="Password"
+            placeholderTextColor="grey"
+            secureTextEntry={!pwdVisible}
+          />
+          <Icon
+            name={eyeIcon}
+            size={30}
+            color="grey"
+            onPress={onEyeClicked}
+            style={styles.eyeIcon}
+          />
+        </View>
         <View style={styles.logInButton}>
           <CustomButton
             title="LOG IN"
@@ -62,6 +84,11 @@ const styles = StyleSheet.create({
   },
   logInButton: {
     marginTop: 30,
+  },
+  eyeIcon: {
+    position: 'absolute',
+    right: 10,
+    top: 10,
   },
 });
 

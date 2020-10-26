@@ -11,6 +11,7 @@ const CustomTextInput = (props) => {
         placeholderTextColor={
           props.placeholderTextColor ? props.placeholderTextColor : null
         }
+        secureTextEntry={props.secureTextEntry}
       />
     </View>
   );
